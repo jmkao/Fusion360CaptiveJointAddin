@@ -178,7 +178,7 @@ def create_side_sketch(next_face, centerPoint, config):
 
 def create_side_hole(next_face, centerPoint, config):
     sketch, mirrorLine, face = create_side_sketch(next_face, centerPoint, config)
-    hole_feature = to_next_extrude(sketch.profiles[sketch.profiles.count - 1], face.body.parentComponent, face, face.pointOnFace, adsk.fusion.FeatureOperations.CutFeatureOperation)
+    hole_feature = to_next_extrude(sketch.profiles[sketch.profiles.count - 1], face.body.parentComponent, face, face.pointOnFace, adsk.fusion.FeatureOperations.IntersectFeatureOperation)
 
 # Delete the line that says "pass" for any method you want to use
 class CaptiveJointCommand(Fusion360CommandBase):
